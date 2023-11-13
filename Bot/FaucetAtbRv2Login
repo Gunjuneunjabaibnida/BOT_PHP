@@ -20,7 +20,7 @@ class FaucetAtbRv2 extends ApiBypass {
 			unlink("cookie.txt");
 		}
 		if(!file_exists("cookie.txt")){
-			$r = $this->curl(host."?r=".id,$this->Headers(),'',1)[1];
+			$r = $this->curl(host."?r=",$this->Headers(),'',1)[1];
 			$csrf = explode('">',explode('<input type="hidden" name="csrf_token_name" id="token" value="',$r)[1])[0];
 			$data = [
 			"wallet" => $this->simpan("Email_Faucetpay"),
